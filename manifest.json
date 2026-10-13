@@ -1,1 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "VPN AFJAL ULTRA 100K MIC PRO",
+  "version": "3.0",
+  "description": "Extreme Loud Mic with Adaptive Dynamic Ducking & AGC Bypass",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.messenger.com/*", "https://*.facebook.com/*"],
+      "js": ["content/loader.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["core/injector.js"],
+      "matches": ["https://*.messenger.com/*", "https://*.facebook.com/*"]
+    }
+  ]
+}
 
